@@ -41,8 +41,8 @@ def draw_img(frame, img_superfice, homography):
 def detect(img_name):
     img_reference = cv2.imread("./imgs_board/board_aruco.png")
     img_superfice = cv2.imread("./imgs/" + img_name)
-    img_superficie = cv2.resize(img_reference, (img_reference.shape[0], img_reference.shape[1]),  )
-
+    img_superfice = cv2.resize(img_superfice, (img_reference.shape[1], img_reference.shape[0]))
+    
     corners_r, ids_r, rejectedImgPoints_r = get_markers(img_reference)
     dic_r = create_dic(corners_r, ids_r)
 
